@@ -6,6 +6,7 @@ import * as styles from '../../styles/projects.module.css'
 export default function Projects({ data }) {
   console.log(data)
   const projects = data.allMarkdownRemark.nodes
+  console.log(projects)
 
   return (
     <Layout>
@@ -36,6 +37,13 @@ query ProjectsPage {
         slug
         stack
         title
+        thumb {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
       id
     }
