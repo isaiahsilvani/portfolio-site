@@ -1,8 +1,10 @@
 import React from 'react'
 import Layout from '../../components/Layout'
+import { graphql } from 'gatsby'
 import * as styles from '../../styles/projects.module.css'
 
-export default function Projects() {
+export default function Projects({ data }) {
+  console.log(data)
   return (
     <Layout>
       <div className={styles.portfolio}>
@@ -12,3 +14,19 @@ export default function Projects() {
     </Layout>
   )
 }
+
+// export page query
+export const query = graphql`
+query ProjectsPage {
+  allMarkdownRemark {
+    nodes {
+      frontmatter {
+        slug
+        stack
+        title
+      }
+      id
+    }
+  }
+}
+`
