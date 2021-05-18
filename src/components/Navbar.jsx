@@ -4,7 +4,7 @@ import React from 'react';
 export default function Navbar() {
   return (
     <nav>
-      <h1>Full Stack Developer</h1>
+      <h1>Isaiah Silvani</h1>
       <div className='links'>
         <Link to="/">Home</Link>
         <Link to="/about">About</Link>
